@@ -1,0 +1,25 @@
+<div class="container d-flex justify-content-center ">
+    <form [formGroup]="todoForm" class="row my-2 formbg">
+        <h3 class="text-light bg-success my-2  h-25 text-center">Add Todo </h3>
+        <div class="row ">
+            <div class="form-group ">
+                <label for=""><b>Todo Title </b></label>
+                <input type="text" class="form-control" placeholder="Add Todo.. " formControlName="taskName">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group ">
+                <label for=""><b>Status</b></label>
+                <select formControlName="status" class="form-control">
+                    <option value="{{sst}}" *ngFor="let sst of todoStatus"> {{sst}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="text-center my-4 pb-3" >
+            <button class="btn btn-success col-4" *ngIf="!showflag" (click)="onSave(todoForm.value)" >Save</button>
+            <button class="btn btn-success col-4 " *ngIf="showflag" (click)="onUpdate(todoForm.value)" >Update</button>
+        </div>
+    </form>
+</div>

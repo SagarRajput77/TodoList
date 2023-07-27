@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-6 ">
+            
+            <table class="table table-responsive my-3">
+                <tr class="" >
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                <tr *ngFor="let todo of todoData">
+                    <td>{{todo.taskName}}</td>
+                    <td>{{todo.status}}</td>
+                    <td>
+                        <button class="btn btn-info" (click)="onEdit(todo)" >Edit</button>&nbsp;&nbsp;
+                        <button class="btn btn-danger" (click)="onDel(todo)">Delete</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
